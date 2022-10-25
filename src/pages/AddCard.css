@@ -1,0 +1,204 @@
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "LeeSeoyun";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.addCard-container {
+  width: 95%;
+  max-width: 1200px;
+  background-color: #f0d696;
+
+  margin: auto;
+}
+
+.addCard-container > h1 {
+  color: #264653;
+  font-family: "DungGeunMo";
+
+  margin: 40px 0 40px 80px;
+}
+
+.addCard-form {
+  width: 90%;
+  max-width: 1000px;
+  min-height: 400px;
+
+  justify-content: center;
+  margin: 40px 0 40px 150px;
+}
+
+.addCard-img {
+  padding: 40px 0 0 40px;
+  margin-bottom: 30px;
+}
+
+.addCard-img > input {
+  width: 800px;
+  height: 33px;
+
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  background-color: #fff;
+  margin-right: 15px;
+}
+
+.addCard-img > input::placeholder {
+  color: #ccc;
+  font-family: "LeeSeoyun";
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.addCard-img > input:focus {
+  outline: 2px solid #2a9d8f;
+}
+
+.addCard-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.addCard-title > select {
+  width: 190px;
+  height: 33px;
+  border: 2px solid #e5e5e5;
+  border-radius: 5px;
+  background-color: url("https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png")
+    calc(100% - 5px) center no-repeat;
+  background-size: 20px;
+  outline: 0 none;
+
+  padding: 5px 30px 5px 10px;
+  margin: 0 10px 20px 40px;
+}
+
+.addCard-title > select option {
+  background-color: #e5e5e5;
+  color: #264653;
+  padding: 3px 0;
+}
+
+.addCard-title > input {
+  width: 600px;
+  height: 33px;
+
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  background-color: #fff;
+
+  margin-bottom: 20px;
+}
+
+.addCard-title > input::placeholder {
+  color: #ccc;
+  font-family: "LeeSeoyun";
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.addCard-title > input:focus {
+  outline: 2px solid #2a9d8f;
+}
+
+.addCard-content {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+}
+
+.addCard-content > input {
+  width: 600px;
+  height: 35px;
+
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  background-color: #fff;
+
+  margin-bottom: 20px;
+}
+
+.addCard-content > input::placeholder {
+  color: #ccc;
+  font-family: "LeeSeoyun";
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.addCard-content > input:focus {
+  outline: 2px solid #2a9d8f;
+}
+
+.addCard-content > textarea {
+  width: 800px;
+  min-height: 200px;
+
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.addCard-content > textarea::placeholder {
+  padding-top: 10px;
+  color: #ccc;
+  font-family: "LeeSeoyun";
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+}
+
+.addCard-content > textarea:focus {
+  outline: 2px solid #2a9d8f;
+}
+
+.addCard-btn-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 30px;
+}
+
+.addCard-btn {
+  width: 300px;
+  height: 50px;
+
+  font-family: "Galmuri14", sans-serif;
+  font-size: 19px;
+  font-weight: bold;
+  text-align: center;
+  color: #2e5564;
+
+  cursor: pointer;
+  background-color: #e9c46a;
+  border: none;
+  border-radius: 15px;
+
+  margin-right: 50px;
+}
+.addCard-btn:before {
+  height: 0%;
+  width: 2px;
+}
+.addCard-btn:hover {
+  /* box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .4); */
+  background-color: #f4a261;
+}
