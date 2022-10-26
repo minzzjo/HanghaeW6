@@ -10,25 +10,25 @@ const Navbar = () => {
   let nickname = getCookie("nickname");
 
   return (
-    <div className='nav-container'>
-      <img className='logo-img' alt='logo' src='img/ghost.png' />
+    <div className="nav-container">
+      <img className="logo-img" alt="logo" src="img/ghost.png" />
       <Link to={"/"} style={{ textDecoration: "none" }}>
-        <h3 className='nav-btn'>출발! 비디오 여행</h3>
+        <h3 className="nav-btn">출발! 비디오 여행</h3>
       </Link>
       <Link to={"/list"} style={{ textDecoration: "none" }}>
-        <h3 className='nav-btn'>비디오방</h3>
+        <h3 className="nav-btn">비디오방</h3>
       </Link>
       <Link to={"/list"} style={{ textDecoration: "none" }}>
-        <h3 className='nav-btn'>만화방</h3>
+        <h3 className="nav-btn">만화방</h3>
       </Link>
-      <Link to={"/addcard"} style={{ textDecoration: "none" }}>
-        <h3 className='nav-btn'>새글작성</h3>
+      <Link to={"/post"} style={{ textDecoration: "none" }}>
+        <h3 className="nav-btn">새글작성</h3>
       </Link>
 
       {getCookie("Access_Token") ? (
         <h3>
           <h3
-            className='nav-btn'
+            className="nav-btn"
             onClick={() => {
               delCookie("Access_Token");
               delCookie("nickname");
@@ -49,7 +49,7 @@ const Navbar = () => {
             onClick={() => {
               navigate("/login");
             }}
-            className='nav-btn'
+            className="nav-btn"
             style={{ textDecoration: "none" }}
           >
             로그인

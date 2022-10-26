@@ -26,20 +26,28 @@ const List = () => {
         <h1>오늘의 만화영화 랭킹</h1>
         <div className="list-box">
           <Sample />
-          {contents.map((content) => (
-            <div className="list-card" key={content.id}>
-              {/* <div className="listPic">{content.url}</div> */}
-              <img src={content.url} alt="selected-img" className="listPic" />
-              <Link
-                to={`/post/${content.id}`}
-                key={content.id}
-                style={{ textDecoration: "none" }}
-              >
-                <h2>{content.title}</h2>
-              </Link>
-              <div className="list-desc">{content.body}</div>
-            </div>
-          ))}
+          {contents.map((content) =>
+            content !== undefined ? (
+              <div className="list-card" key={content.id}>
+                {/* <div className="listPic">{content.url}</div> */}
+                <img
+                  src={content.image}
+                  alt="selected-img"
+                  className="listPic"
+                />
+                <Link
+                  to={`/post/${content.id}`}
+                  key={content.id}
+                  style={{ textDecoration: "none" }}
+                >
+                  <h2>{content.title}</h2>
+                </Link>
+                <div className="list-desc">{content.body}</div>
+              </div>
+            ) : (
+              ""
+            )
+          )}
         </div>
       </div>
       <Footer />

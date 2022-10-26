@@ -46,7 +46,7 @@ const Login = () => {
     console.log(obj);
 
     await axios
-      .post("http://43.201.61.41/login", {
+      .post("http://3.34.127.254:8080/login", {
         loginId: user,
         password: pw,
       })
@@ -59,7 +59,7 @@ const Login = () => {
         //
 
         const Access_Token = res.headers.access_token;
-        // console.log("쿠키의 모양", Access_Token);
+        console.log("쿠키의 모양", Access_Token);
         if (res.data.ok === true) {
           setCookie(
             "Access_Token",

@@ -17,13 +17,34 @@ const AddCard = () => {
   const content = useSelector((state) => state.content.content);
 
   const onChangeContent = () => {
-    dispatch(
-      __addContent({ id: content.length + 1, url, category, title, body })
-    );
+    // dispatch(
+    //   __addContent({ id: content.length + 1, url, category, title, body })
+    // );
   };
 
   const onAddContent = () => {
+    console.log("category", category);
+    const obj = {
+      id: Date.now(),
+      image: url,
+      category: category,
+      title: title,
+      content: body,
+    };
     if (url !== "" && title !== "" && body !== "") {
+      // dispatch(
+      //   __addContent({ id: content.length + 1, url, category, title, body })
+      // );
+      dispatch(
+        // __addContent({
+        //   // id: String(Date.now()),
+        //   image: url,
+        //   category: category,
+        //   title: title,
+        //   content: content,
+        // })
+        __addContent(obj)
+      );
       onChangeContent();
       setUrl("");
       setCategory("");
@@ -32,6 +53,7 @@ const AddCard = () => {
     }
   };
 
+  console.log(category);
   return (
     <div className="addCard-container">
       <Navbar />
@@ -54,17 +76,14 @@ const AddCard = () => {
 
         <div className="addCard-title">
           <select
+            name="category"
             onChange={(e) => {
               setCategory(e.target.value);
             }}
           >
             <option value={"category"}>카테고리 선택</option>
-            <option name="toon" value={category}>
-              만화방
-            </option>
-            <option name="movie" value={category}>
-              비디오방
-            </option>
+            <option value="toon">만화방</option>
+            <option value="movie">비디오방</option>
           </select>
           <input
             type="text"

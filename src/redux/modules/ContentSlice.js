@@ -1,9 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { getCookie } from "../../cookie/cookie";
 // import { create } from "json-server";
 // import thunk from "redux-thunk";
 
-
+const headers = {
+'Content-Type' : 'application/json',
+'Access_Token' : getCookie('Access_Token')
+}
 // Thunk function
 
 //GET - GETCONTENT
@@ -11,7 +15,14 @@ export const __getContent = createAsyncThunk(
   "post/__getContent",
   async (thunkAPI) => {
     try {
-      const data = await axios.get("http://localhost:3001/content");
+      // console.log("encodeURI", encodeURI(getCookie("Access_Token")));
+      console.log("getCookie", getCookie("Access_Token"));
+      const data = await axios.get(
+        "http://3.34.127.254:8080/post/movie", {headers : headers}
+      
+      ).then((response) => {
+        console.log(response);
+      })
       console.log("get data", data)
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
@@ -25,9 +36,17 @@ export const __addContent = createAsyncThunk(
   "post/__addcontent",
   async (payload, thunkAPI) => {
     try {
-      const data= await axios.post("http://localhost:3001/content", payload);
-      console.log("post data", data)
-      return thunkAPI.fulfillWithValue(data.data)
+      console.log("쿠키", getCookie("Access_Token"));
+      console.log("post payload", payload)
+      await axios.post(
+        "http://3.34.127.254:8080/post",
+        payload,
+        {headers: headers}
+        ).then((response) => {
+          console.log("response", response);
+          return thunkAPI.fulfillWithValue(response.data)
+        });
+      
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
@@ -70,10 +89,10 @@ const initialState = {
   content: [
     {
       id: 1,
-      url: "https://image.tving.com/upload/cms/caip/CAIP0400/P000388342.jpg/dims/resize/1280",
+      image: "https://image.tving.com/upload/cms/caip/CAIP0400/P000388342.jpg/dims/resize/1280",
       category: "toon",
       title: "짱구는 못말려",
-      body: "짱구와 떡잎유치원 친구들은 정말정말 못말려!",
+      content: "짱구와 떡잎유치원 친구들은 정말정말 못말려!",
     }
   ]
   // content: [],
@@ -105,6 +124,7 @@ const ContentSlice = createSlice({
     [__addContent.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.isSuccess = true;
+      console.log("store", action.payload);
       state.content.push(action.payload)
     },
     [__addContent.rejected]: (state, action) => {
