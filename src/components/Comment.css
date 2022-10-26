@@ -1,0 +1,142 @@
+.detail-comment > input {
+  margin-left: 200px;
+  margin-right: 15px;
+  width: 600px;
+  height: 30px;
+
+  border: 2px solid #e5e5e5;
+  border-radius: 7px;
+}
+
+.detail-comment > input::placeholder {
+  font-family: "LeeSeoyun";
+  font-size: medium;
+  color: #ccc;
+  text-align: center;
+}
+
+.detail-comment > input:focus {
+  outline: 2px solid #e76f51;
+}
+
+.detail-comment > button {
+  width: 100px;
+  height: 34px;
+
+  font-family: "LeeSeoyun";
+  font-size: 19px;
+  font-weight: bold;
+  text-align: center;
+
+  cursor: pointer;
+  color: #2e5564;
+
+  background-color: #e76f51;
+  color: #264653;
+  border: none;
+  border-radius: 5px;
+}
+
+.detail-comment > button:hover {
+  background-color: #f4a261;
+}
+
+.detail-commentBox > p {
+  width: 600px;
+  margin-left: 150px;
+
+  font-family: "LeeSeoyun";
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.detail-commentBox > button {
+  width: 50px;
+  height: 30px;
+
+  margin: 12px 0 0 15px;
+
+  background-color: #e9c46a;
+  color: #2a9d8f;
+  font-family: "LeeSeoyun";
+  font-size: 19px;
+  font-weight: bold;
+  text-align: center;
+
+  border: none;
+  border-radius: 7px;
+}
+
+.detail-commentBox > button:hover {
+  background-color: #2a9d8f;
+  color: #e9c46a;
+}
+
+.detail-commentBox-btn {
+  width: 50px;
+  height: 30px;
+
+  background-color: #e9c46a;
+  color: #2a9d8f;
+  font-family: "LeeSeoyun";
+  font-size: 19px;
+  font-weight: bold;
+  text-align: center;
+
+  border: none;
+  border-radius: 7px;
+
+  margin-right: 10px;
+}
+
+.detail-commentBox-btn:hover {
+  background-color: #2a9d8f;
+  color: #e9c46a;
+}
+
+.comment-edit {
+  /* background-color: violet; */
+  /* display: flex; */
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.detailComment-line {
+  /* background-color: tomato; */
+  width: 600px;
+  font-family: "LeeSeoyun";
+  font-size: 19px;
+  font-weight: bold;
+
+  margin: 30px 0 20px 200px;
+}
+
+.comment-btn {
+  /* background-color: yellowgreen; */
+  width: 150px;
+  float: right;
+  margin-top: -45px;
+  margin-right: 180px;
+}
+
+.delete-btn {
+  width: 50px;
+  height: 30px;
+
+  /* margin: 12px 0 0 15px; */
+
+  background-color: #e9c46a;
+  color: #2a9d8f;
+  font-family: "LeeSeoyun";
+  font-size: 19px;
+  font-weight: bold;
+  text-align: center;
+
+  border: none;
+  border-radius: 7px;
+}
+
+.detail-btn:hover {
+  background-color: #2a9d8f;
+  color: #e9c46a;
+}

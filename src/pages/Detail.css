@@ -1,0 +1,125 @@
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+@font-face {
+  font-family: "DungGeunMo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "LeeSeoyun";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.detail-container {
+  width: 95%;
+  max-width: 1200px;
+  background-color: #f0d696;
+
+  margin: auto;
+}
+
+.detail-h1 {
+  color: #264653;
+  font-family: "DungGeunMo";
+
+  margin: 60px 0 0 100px;
+}
+
+.detail-form {
+  width: 90%;
+  max-width: 1000px;
+  min-height: 400px;
+
+  justify-content: center;
+  margin: 30px 0 40px 200px;
+}
+
+.detail-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: auto;
+}
+
+.detailTitle-btn {
+  width: 60px;
+  height: 34px;
+
+  font-family: "LeeSeoyun";
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+
+  cursor: pointer;
+  color: #2e5564;
+
+  background-color: #e76f51;
+  color: #264653;
+  border: none;
+  border-radius: 5px;
+
+  margin-left: 930px;
+}
+
+.detailTitle-btn:hover {
+  background-color: #f4a261;
+}
+
+.detailPic {
+  width: 800px;
+  height: 500px;
+
+  background-image: url("");
+  background-size: cover;
+  background-position: center;
+}
+
+.detail-body {
+  font-family: "Galmuri14", sans-serif;
+
+  width: 700px;
+  margin-left: 200px;
+}
+
+.content-edit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.detailEdit-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.detailBody-btn {
+  width: 60px;
+  height: 34px;
+
+  font-family: "LeeSeoyun";
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+
+  cursor: pointer;
+  color: #2e5564;
+
+  background-color: #e76f51;
+  color: #264653;
+  border: none;
+  border-radius: 5px;
+}
+
+.detailBody-btn:hover {
+  background-color: #f4a261;
+}

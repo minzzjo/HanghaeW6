@@ -1,0 +1,67 @@
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+    font-family: 'LeeSeoyun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.list-container {
+  background-color: #f0d696;
+}
+
+.list-container > h1 {
+  color: #264653;
+  font-family: 'DungGeunMo';
+
+  margin: 40px 0 40px 80px;
+}
+
+.list-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* .list-card > h2 {
+  font-family: "Galmuri14", sans-serif;
+} */
+
+.list-desc {
+  font-family: 'LeeSeoyun';
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list-card {
+  width: 200px;
+  height: 400px;
+
+  font-family: "Galmuri14", sans-serif;
+  cursor: pointer;
+
+  background-color: #F4F4F4;
+  /* box-shadow: x y blur spread color */
+  box-shadow: 0px 0px 1px 0px #6F737C;
+
+  margin-bottom: 30px;
+  padding: 40px;
+}
+
+.listPic {
+  width: 200px;
+  height: 300px;
+
+  background-image: url("");
+  background-size: cover;
+  background-position: center;
+}
