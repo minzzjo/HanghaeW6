@@ -8,8 +8,8 @@ const store = configureStore({
     content: content,
     comment: comment,
   },
-  //dev tool을 개발 환경에서만 설정
-  // devTools: process.env.REACT_APP_MOD !== "production",
+  // dev tool을 개발 환경에서만 설정
+  devTools: process.env.REACT_APP_MOD !== "production",
 });
 
 export default store;

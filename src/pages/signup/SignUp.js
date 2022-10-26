@@ -111,7 +111,7 @@ const SignUp = () => {
     };
     console.log("회원가입 요청 전, 데이터 확인", obj);
     await axios
-      .post("http://3.38.250.135/signup", {
+      .post("http://43.201.61.41/signup", {
         loginId: nickname,
         password: password,
         username: nickname,
@@ -147,7 +147,7 @@ const SignUp = () => {
   const nickNameCheck = async () => {
     console.log(nickname);
     await axios
-      .post("http://3.38.250.135/signup/overlap", {
+      .post("http://43.201.61.41/signup/overlap", {
         loginId: nickname,
       })
       .then((res) => {
