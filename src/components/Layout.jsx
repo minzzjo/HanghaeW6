@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Layout = ({ children }) => {
-  return <STLayout>{children}</STLayout>
+  return <STLayout>{children}</STLayout>;
 };
 
 const STLayout = styled.div`
@@ -12,5 +12,6 @@ const STLayout = styled.div`
 
   background-color: #f0d696;
 `;
-
+//커밋용
+//커밋용
 export default Layout;
