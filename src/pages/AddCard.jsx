@@ -77,6 +77,7 @@ const AddCard = () => {
             maxLength={15}
           />
         </div>
+        {/* djksdpgit  */}
 
         <div className="addCard-content">
           <textarea
