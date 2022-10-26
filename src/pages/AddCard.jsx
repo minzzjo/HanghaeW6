@@ -23,7 +23,6 @@ const AddCard = () => {
   };
 
   const onAddContent = () => {
-    console.log("category", category);
     const obj = {
       id: Date.now(),
       image: url,
@@ -53,66 +52,65 @@ const AddCard = () => {
     }
   };
 
-  console.log(category);
   return (
-    <div className="addCard-container">
+    <div className='addCard-container'>
       <Navbar />
       <h1>새로운 글 작성하기</h1>
-      <div className="addCard-form">
+      <div className='addCard-form'>
         <form>
-          <div className="addCard-img">
+          <div className='addCard-img'>
             <input
-              type="url"
-              name="url"
+              type='url'
+              name='url'
               value={url}
               onChange={(e) => {
                 setUrl(e.target.value);
               }}
-              placeholder="이미지 주소를 입력하세요"
+              placeholder='이미지 주소를 입력하세요'
             />{" "}
-            <input type="submit" />
+            <input type='submit' />
           </div>
         </form>
 
-        <div className="addCard-title">
+        <div className='addCard-title'>
           <select
-            name="category"
+            name='category'
             onChange={(e) => {
               setCategory(e.target.value);
             }}
           >
             <option value={"category"}>카테고리 선택</option>
-            <option value="toon">만화방</option>
-            <option value="movie">비디오방</option>
+            <option value='toon'>만화방</option>
+            <option value='movie'>비디오방</option>
           </select>
           <input
-            type="text"
+            type='text'
             onChange={(e) => {
               setTitle(e.target.value);
             }}
-            name="title"
+            name='title'
             value={title}
-            placeholder="제목 입력(15자 이내)"
+            placeholder='제목 입력(15자 이내)'
             maxLength={15}
           />
         </div>
         {/* djksdpgit  */}
 
-        <div className="addCard-content">
+        <div className='addCard-content'>
           <textarea
             onChange={(e) => {
               setBody(e.target.value);
             }}
-            name="body"
+            name='body'
             value={body}
             maxLength={200}
-            placeholder="내용을 입력해주세요(200자 이내)"
+            placeholder='내용을 입력해주세요(200자 이내)'
           />
         </div>
-        <div className="addCard-btn-box">
+        <div className='addCard-btn-box'>
           <Link to={"/list"}>
             <button
-              className="addCard-btn"
+              className='addCard-btn'
               onClick={() => {
                 onAddContent();
                 navigate("/list");
@@ -125,7 +123,7 @@ const AddCard = () => {
             onClick={() => {
               navigate(-1);
             }}
-            className="addCard-btn"
+            className='addCard-btn'
           >
             취소하기
           </button>

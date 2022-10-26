@@ -12,28 +12,30 @@ import Sample from "../elements/Sample";
 const List = () => {
   const dispatch = useDispatch();
   const contents = useSelector((state) => state.content.content);
-  console.log("list content", contents);
+
+  // console.log("콘텐츠", contents);
 
   useEffect(() => {
     dispatch(__getContent());
-  }, [dispatch]);
+    // console.log(contents);
+  }, []);
 
   return (
     <STList>
       <Navbar />
       <Header />
-      <div className="list-container">
+      <div className='list-container'>
         <h1>오늘의 만화영화 랭킹</h1>
-        <div className="list-box">
+        <div className='list-box'>
           <Sample />
           {contents.map((content) =>
             content !== undefined ? (
-              <div className="list-card" key={content.id}>
+              <div className='list-card' key={content.id}>
                 {/* <div className="listPic">{content.url}</div> */}
                 <img
                   src={content.image}
-                  alt="selected-img"
-                  className="listPic"
+                  alt='selected-img'
+                  className='listPic'
                 />
                 <Link
                   to={`/post/${content.id}`}
@@ -42,7 +44,7 @@ const List = () => {
                 >
                   <h2>{content.title}</h2>
                 </Link>
-                <div className="list-desc">{content.body}</div>
+                <div className='list-desc'>{content.body}</div>
               </div>
             ) : (
               ""

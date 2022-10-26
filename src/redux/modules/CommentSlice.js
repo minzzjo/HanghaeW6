@@ -10,8 +10,8 @@ const initialState = {
     {
       id: 1,
       body: "내 이름은 코난, 탐정이죠.",
-    }
-  ]
+    },
+  ],
 };
 
 // Thunk function
@@ -19,31 +19,36 @@ const initialState = {
 //GET - GETCOMMENT
 export const __getComment = createAsyncThunk(
   "comment/__getComment",
-  async (thunkAPI) => {
+  async (payload, thunkAPI) => {
     try {
-      const data = await axios.get("http://localhost:3001/content");
-      console.log("comment get", data)
+      const data = await axios.get(
+        `"http://54.180.140.58:8080/post/detail/${payload}"`
+      );
+      console.log("comment get", data);
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
   }
-)
+);
 
 // POST - ADDCOMMENT
 export const __addComment = createAsyncThunk(
   "comment/__addComment",
   async (payload, thunkAPI) => {
     try {
-      const data = await axios.post("http://localhost:3001/content", payload)
-      console.log("post Comment", data)
-      console.log("post comment", payload)
-      return thunkAPI.fulfillWithValue(data.data)
+      const data = await axios.post(
+        `"http://54.180.140.58:8080/comment/${payload}"`,
+        payload
+      );
+      console.log("post Comment", data);
+      console.log("post comment", payload);
+      return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
   }
-)
+);
 
 // DELETE - DELETECOMMENT
 export const __deleteComment = createAsyncThunk(
@@ -56,7 +61,7 @@ export const __deleteComment = createAsyncThunk(
       return thunkAPI.rejectWithValue(error);
     }
   }
-)
+);
 
 // PATCH(PUT) - EDITCONMMENT
 export const __editComment = createAsyncThunk(
@@ -64,7 +69,10 @@ export const __editComment = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       // 내용을 수정하고
-      await axios.patch(`http://localhost:3001/content/${payload.id}`, { id: payload.id, comment: payload.target });
+      await axios.patch(`http://localhost:3001/content/${payload.id}`, {
+        id: payload.id,
+        comment: payload.target,
+      });
       // 수정한 값을 넣은 새로운 내용을 get으로 가져온다
       const data = await axios.get("http://localhost:3001/content");
       // 성공하면 가져온 수정 데이터를 보내주고
@@ -74,7 +82,7 @@ export const __editComment = createAsyncThunk(
       return thunkAPI.rejectWithValue(error);
     }
   }
-)
+);
 
 // ExtraReducer
 const CommentSlice = createSlice({
@@ -125,11 +133,12 @@ const CommentSlice = createSlice({
     [__editComment.rejected]: (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
-    }
-  }
-})
+    },
+  },
+});
 
 // 액션크리에이터는 컴포넌트에서 사용하기 위해 export 하고
-export const { getComment, addComment, deleteComment, editComment } = CommentSlice.actions;
+export const { getComment, addComment, deleteComment, editComment } =
+  CommentSlice.actions;
 // reducer 는 configStore에 등록하기 위해 export default 합니다.
 export default CommentSlice.reducer;

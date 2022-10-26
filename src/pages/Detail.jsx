@@ -20,9 +20,9 @@ const Detail = () => {
   const [edit, setEdit] = useState(false);
   const [target, setTarget] = useState();
 
-  // useEffect(() => {
-  //   dispatch(__getComment());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(__getComment());
+  }, [dispatch]);
 
   const btnCancle = () => {
     setEdit(false);
@@ -42,53 +42,53 @@ const Detail = () => {
   };
 
   return (
-    <div className="detail-container">
+    <div className='detail-container'>
       <Navbar />
-      <div className="detail-title" key={contents.id}>
+      <div className='detail-title' key={contents.id}>
         {contents
           .filter((content) => content.id === Number(id))
           .map((content) => (
             <div key={content.id}>
-              <h1 className="detail-h1">{content.title}</h1>
+              <h1 className='detail-h1'>{content.title}</h1>
               <div>
                 <button
-                  className="detailTitle-btn"
+                  className='detailTitle-btn'
                   onClick={() => onDeleteContent(content.id)}
                 >
                   삭제
                 </button>
               </div>
-              <div className="detail-form">
+              <div className='detail-form'>
                 {/* <div className="detailPic" /> */}
                 <div key={content.id}>
                   <img
                     src={content.url}
-                    alt="selected-img"
-                    className="detailPic"
+                    alt='selected-img'
+                    className='detailPic'
                   />
-                  <h3 className="detail-body">{content.body}</h3>
+                  <h3 className='detail-body'>{content.body}</h3>
                 </div>
               </div>
 
-              <div className="content-edit">
+              <div className='content-edit'>
                 <div key={contents.id}>
                   {edit ? (
                     <>
                       <input
-                        type="text"
+                        type='text'
                         value={target}
                         onChange={({ target }) => setTarget(target.value)}
                       />
-                      <div className="detailEdit-btn">
+                      <div className='detailEdit-btn'>
                         <button
                           onClick={onContentUpdate(content.id)}
-                          className="detailBody-btn"
+                          className='detailBody-btn'
                         >
                           수정완료
                         </button>
                         <button
                           onClick={() => btnCancle()}
-                          className="detailBody-btn"
+                          className='detailBody-btn'
                         >
                           수정취소
                         </button>
@@ -96,12 +96,12 @@ const Detail = () => {
                     </>
                   ) : (
                     <>
-                      <div className="detailEdit-btn">
+                      <div className='detailEdit-btn'>
                         <button
                           onClick={() => {
                             toggleEdit();
                           }}
-                          className="detailBody-btn"
+                          className='detailBody-btn'
                         >
                           수정
                         </button>

@@ -46,7 +46,7 @@ const Login = () => {
     console.log(obj);
 
     await axios
-      .post("http://3.34.127.254:8080/login", {
+      .post("http://54.180.140.58:8080/login", {
         loginId: user,
         password: pw,
       })
@@ -73,8 +73,6 @@ const Login = () => {
             // })
           );
           setCookie("nickname", user);
-
-          console.log("토큰의 형태", res.headers.access_token);
           // localStorage.setItem("refreshToken", res.headers.refresh_token);
 
           // localStorage.setItem("username", res.data.data.username);
