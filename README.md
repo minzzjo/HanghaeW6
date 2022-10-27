@@ -47,7 +47,7 @@ HTML / CSS in JS / JavaScript / React / Redux / Redux Toolkit / git / gitHub / s
 Managing page by page through react-router-dom
 
 - Home화면, 보고싶은 미디어 화면, 미디어 카드 확인, 상세페이지 등 react-router-dom으로 관리(url params)<br>
-  Home Screen, Media Screen Want to See, Media Card Check, Detailed Page, etc. <br>
+  Home Screen, Media Screen, Media Card Check, Detailed Page, etc. <br>
   react router-dom Management (via url parmarms)
 
 - router에서 url 상세 관리<br>
