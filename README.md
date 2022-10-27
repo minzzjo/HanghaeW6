@@ -1,4 +1,4 @@
-# 항해 5주차 팀과제 1 : Redux, Toolkit 등 활용한 Todo List + 게시판 만들기
+# 항해 6주차 팀과제 1 : React, Redux-Toolkit, Spring 등을 활용한 미니프로젝트 만들기
 
 
 목차
