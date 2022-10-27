@@ -16,7 +16,6 @@ const Comment = () => {
   const { id } = useParams();
 
   const comments = useSelector((state) => state.comment.comment);
-  console.log("comment", comments);
   const [body, setBody] = useState("");
   const [edit, setEdit] = useState("");
   const [target, setTarget] = useState("");

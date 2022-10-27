@@ -109,7 +109,6 @@ const SignUp = () => {
       username: nickname,
       password: password,
     };
-    console.log("회원가입 요청 전, 데이터 확인", obj);
     await axios
       .post("http://54.180.140.58:8080/signup", {
         loginId: nickname,
@@ -151,7 +150,6 @@ const SignUp = () => {
   // eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYW5naGFlIiwiZXhwIjoxNjY2ODUzMzIxLCJpYXQiOjE2NjY4NDk3MjF9.BmH4-H1UitngkF-sMwDZKpM9sCwbXJ13VYSRx6OVn-k
 
   const nickNameCheck = async () => {
-    console.log(nickname);
     await axios
       .post("http://54.180.140.58:8080/signup/overlap", {
         loginId: nickname,

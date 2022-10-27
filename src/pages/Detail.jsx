@@ -57,7 +57,6 @@ const Detail = () => {
     // };
 
     dispatch(__editContent({ revise, id }));
-    console.log(id);
     // navigate("/list");
   };
 
@@ -67,7 +66,6 @@ const Detail = () => {
   };
 
   const onDeleteContent = (payload) => {
-    console.log("삭제용", payload, "삭제용");
     dispatch(__deleteContent(payload));
   };
 

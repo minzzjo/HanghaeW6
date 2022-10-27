@@ -72,7 +72,6 @@ const Login = () => {
           // localStorage.setItem("refreshToken", res.headers.refresh_token);
 
           // localStorage.setItem("username", res.data.data.username);
-          console.log("로그인할때 받는 토큰", getCookie("Access_Token"));
           alert(res.data.message);
           // alert("로그인에 성공하였습니다");
           // navigate("/", { state: { userData: res.data.data } });

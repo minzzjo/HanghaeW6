@@ -13,13 +13,11 @@ import { useNavigate } from "react-router-dom";
 const List = () => {
   const dispatch = useDispatch();
   const contents = useSelector((state) => state.content.content);
-  console.log("리스트의 맵", contents);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(__getContent());
-    // console.log(contents);
   }, []);
 
   return (
