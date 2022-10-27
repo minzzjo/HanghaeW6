@@ -2,6 +2,7 @@ import styled from "styled-components";
 // import CMIYC_Logo_White from "../../image/CMIYC_Logo_White.png";
 
 export const STHeaderTitle = styled.h1`
+  width: 300px;
   margin-top: 0px;
   margin-bottom: 20px;
   font-size: 38px;

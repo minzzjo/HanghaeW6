@@ -236,6 +236,7 @@ const SignUp = () => {
                       marginTop: "3.5px",
                       fontSize: "15px",
                       fontFamily: "Jua, sans-serif",
+                      cursor: "pointer"
                     }}
                   >
                     중복확인
@@ -304,6 +305,7 @@ const SignUp = () => {
                   height: "60px",
                   border: "6px solid black",
                   borderRadius: "14px",
+                  cursor: "pointer"
                 }}
                 type='submit'
               >
@@ -318,6 +320,7 @@ const SignUp = () => {
                   width: "120px",
                   border: "6px solid black",
                   borderRadius: "14px",
+                  cursor: "pointer"
                 }}
                 type='button'
               >

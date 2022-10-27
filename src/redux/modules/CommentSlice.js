@@ -21,7 +21,7 @@ export const __getComment = createAsyncThunk(
   "comment/__getComment",
   async (payload, thunkAPI) => {
     try {
-      const data = await axios.get("http://localhost:3001");
+      const data = await axios.get("http://54.180.140.58:8080/comment");
       console.log("comment get", data);
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
@@ -35,7 +35,7 @@ export const __addComment = createAsyncThunk(
   "comment/__addComment",
   async (payload, thunkAPI) => {
     try {
-      const data = await axios.post("http://localhost:3001", payload);
+      const data = await axios.post("http://54.180.140.58:8080/comment", payload);
       console.log("post Comment", data);
       console.log("post comment", payload);
       return thunkAPI.fulfillWithValue(data.data);
@@ -50,7 +50,7 @@ export const __deleteComment = createAsyncThunk(
   "comment/__deleteComment",
   async (payload, thunkAPI) => {
     try {
-      await axios.delete(`http://localhost:3001/content/${payload}`);
+      await axios.delete(`http://54.180.140.58:8080/comment/${payload}`);
       return thunkAPI.fulfillWithValue(payload);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -64,12 +64,12 @@ export const __editComment = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       // 내용을 수정하고
-      await axios.patch(`http://localhost:3001/content/${payload.id}`, {
+      await axios.patch(`http://54.180.140.58:8080/comment/${payload.id}`, {
         id: payload.id,
         comment: payload.target,
       });
       // 수정한 값을 넣은 새로운 내용을 get으로 가져온다
-      const data = await axios.get("http://localhost:3001/content");
+      const data = await axios.get("http://54.180.140.58:8080/comment");
       // 성공하면 가져온 수정 데이터를 보내주고
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {

@@ -18,7 +18,7 @@ export const __getContent = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       // console.log("encodeURI", encodeURI(getCookie("Access_Token")))
-      const response = await axios.get("http://54.180.140.58:8080/post/movie", {
+      const response = await axios.get("https://54.180.140.58:8080/post/movie", {
         headers: headers,
       });
       if (response.data.ok === true) {
@@ -50,7 +50,7 @@ export const __addContent = createAsyncThunk(
     // const navigate = useNavigate();
     try {
       await axios
-        .post("http://54.180.140.58:8080/post", payload, { headers: headers })
+        .post("https://54.180.140.58:8080/post", payload, { headers: headers })
         .then((response) => {
           console.log("통신 성공", payload);
           if (response.data.ok) {
@@ -72,7 +72,7 @@ export const __deleteContent = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       await axios
-        .delete(`http://54.180.140.58:8080/post/${payload}`, {
+        .delete(`https://54.180.140.58:8080/post/${payload}`, {
           // .delete(`http://gubeom95.shop/post/${payload}`, {
           headers: headers,
         })
@@ -101,7 +101,7 @@ export const __editContent = createAsyncThunk(
       console.log("수정요청할때 헤더값", headers.Access_Token);
       // 내용을 수정하고
       const data = await axios.put(
-        `http://54.180.140.58:8080/post/${payload.id}`,
+        `https://54.180.140.58:8080/post/${payload.id}`,
         JSON.stringify(payload.revise),
 
         { headers: headers }

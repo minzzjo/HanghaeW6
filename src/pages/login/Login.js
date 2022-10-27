@@ -149,6 +149,7 @@ const Login = () => {
                   border: "6px solid black",
                   borderRadius: "12px",
                   // fontFamily: "Rammetto One, cursive",
+                  cursor: "pointer",
                 }}
               >
                 LOGIN
