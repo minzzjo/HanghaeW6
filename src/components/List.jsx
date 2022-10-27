@@ -8,12 +8,14 @@ import Navbar from "./Navbar";
 import Header from "./Header";
 import Footer from "./Footer";
 import Sample from "../elements/Sample";
+import { useNavigate } from "react-router-dom";
 
 const List = () => {
   const dispatch = useDispatch();
   const contents = useSelector((state) => state.content.content);
+  console.log("리스트의 맵", contents);
 
-  // console.log("콘텐츠", contents);
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(__getContent());
@@ -30,7 +32,7 @@ const List = () => {
           <Sample />
           {contents.map((content) =>
             content !== undefined ? (
-              <div className='list-card' key={content.id}>
+              <div className='list-card' key={content.postId}>
                 {/* <div className="listPic">{content.url}</div> */}
                 <img
                   src={content.image}
@@ -38,13 +40,13 @@ const List = () => {
                   className='listPic'
                 />
                 <Link
-                  to={`/post/${content.id}`}
-                  key={content.id}
+                  to={`/post/${content.postId}`}
+                  key={content.postId}
                   style={{ textDecoration: "none" }}
                 >
                   <h2>{content.title}</h2>
                 </Link>
-                <div className='list-desc'>{content.body}</div>
+                <div className='list-desc'>{content.content}</div>
               </div>
             ) : (
               ""

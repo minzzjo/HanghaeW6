@@ -22,7 +22,7 @@ const Comment = () => {
   const [target, setTarget] = useState("");
 
   const onChangeComment = () => {
-    dispatch(__addComment({ id: comments.length + 1, body }));
+    // dispatch(__addComment({ id: comments.length + 1, body }));
   };
 
   const onAddComment = () => {
@@ -45,7 +45,7 @@ const Comment = () => {
   };
 
   const onCommentUpdate = (id) => {
-    dispatch(__editComment({ id: id, target: target }));
+    // dispatch(__editComment({ id: id, target: target }));
     setEdit(false);
   };
 
@@ -55,15 +55,15 @@ const Comment = () => {
 
   return (
     <div>
-      <div className="detail-comment">
+      <div className='detail-comment'>
         <input
-          type="text"
-          name="body"
+          type='text'
+          name='body'
           value={body}
           onChange={(e) => {
             setBody(e.target.value);
           }}
-          placeholder="댓글을 입력하세요(100자 이내)"
+          placeholder='댓글을 입력하세요(100자 이내)'
           maxLength={100}
         />
         <button
@@ -74,24 +74,24 @@ const Comment = () => {
           완료
         </button>
       </div>
-      <div className="detail-commentBox" key={comments.id}>
+      <div className='detail-commentBox' key={comments.id}>
         {comments
           .filter((comment) => comment.id === Number(id))
           .map((comment) => {
             return (
-              <div className="comment-edit" key={comment.id}>
+              <div className='comment-edit' key={comment.id}>
                 {/* 내 이름은 코난, 탐정이죠 */}
-                <div className="detailComment-line">{comment.body}</div>
+                <div className='detailComment-line'>{comment.body}</div>
                 <div>
-                  <div className="comment-btn" key={comments.id}>
+                  <div className='comment-btn' key={comments.id}>
                     {edit ? (
                       <>
                         <input
-                          type="text"
+                          type='text'
                           value={target}
                           onChange={({ target }) => setTarget(target.value)}
                         />
-                        <div className="detail-commentBox-btn">
+                        <div className='detail-commentBox-btn'>
                           <button onClick={onCommentUpdate(comment.id)}>
                             수정완료
                           </button>
@@ -108,7 +108,7 @@ const Comment = () => {
                           onClick={() => {
                             toggleEditComment();
                           }}
-                          className="detail-commentBox-btn"
+                          className='detail-commentBox-btn'
                         >
                           수정
                         </button>
@@ -116,7 +116,7 @@ const Comment = () => {
                     )}
                     <button
                       onClick={() => onDeleteComment(comment.id)}
-                      className="delete-btn"
+                      className='delete-btn'
                     >
                       삭제
                     </button>

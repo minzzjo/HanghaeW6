@@ -12,7 +12,7 @@ import {
   STHeaderTitle,
 } from "./Login.styled.js";
 import axios from "axios";
-import { setCookie } from "../../cookie/cookie.js";
+import { setCookie, getCookie } from "../../cookie/cookie.js";
 // import Button from "../../components/button/Button";
 
 const Login = () => {
@@ -43,15 +43,12 @@ const Login = () => {
       password: pw,
     };
 
-    console.log(obj);
-
     await axios
       .post("http://54.180.140.58:8080/login", {
         loginId: user,
         password: pw,
       })
       .then((res) => {
-        console.log("값 형태", res);
         //백엔드에서 토큰을 전해줌(헤더에)
         //쿠키에 토큰을 저장하고
         //백엔드에서는 데이터를 꺼낼때, 유저 아이디를 알아야함, 이게 맞는 사람인지 알아야하니까, 그 정보들이 토큰에 있는거임, 만약 수정하거나 삭제하거나 그럴때 백엔드로 다시 보내줘야함
@@ -59,7 +56,6 @@ const Login = () => {
         //
 
         const Access_Token = res.headers.access_token;
-        console.log("쿠키의 모양", Access_Token);
         if (res.data.ok === true) {
           setCookie(
             "Access_Token",
@@ -76,8 +72,9 @@ const Login = () => {
           // localStorage.setItem("refreshToken", res.headers.refresh_token);
 
           // localStorage.setItem("username", res.data.data.username);
-
-          alert("로그인에 성공하였습니다");
+          console.log("로그인할때 받는 토큰", getCookie("Access_Token"));
+          alert(res.data.message);
+          // alert("로그인에 성공하였습니다");
           // navigate("/", { state: { userData: res.data.data } });
           navigate("/");
         } else if (res.data.ok === false) {

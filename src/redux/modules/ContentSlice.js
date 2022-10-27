@@ -4,6 +4,7 @@ import { getCookie } from "../../cookie/cookie";
 // import { create } from "json-server";
 // import thunk from "redux-thunk";
 import { useNavigate } from "react-router-dom";
+import { json } from "react-router-dom";
 
 const headers = {
   "Content-Type": "application/json",
@@ -21,7 +22,7 @@ export const __getContent = createAsyncThunk(
         headers: headers,
       });
       if (response.data.ok === true) {
-        console.log("리스폰값", response);
+        // console.log("리스폰값", response);
         return thunkAPI.fulfillWithValue(response.data.data);
       } else {
         return thunkAPI.rejectWithValue(response.data);
@@ -63,32 +64,54 @@ export const __addContent = createAsyncThunk(
   }
 );
 
+///post/{postId}
+
 // DELETE - DELETECONTENT
 export const __deleteContent = createAsyncThunk(
   "post/__deleteContent",
   async (payload, thunkAPI) => {
     try {
-      await axios.delete(`http://localhost:3001/content/${payload}`);
-      return thunkAPI.fulfillWithValue(payload);
+      await axios
+        .delete(`http://54.180.140.58:8080/post/${payload}`, {
+          // .delete(`http://gubeom95.shop/post/${payload}`, {
+          headers: headers,
+        })
+        .then((response) => {
+          console.log("리스포오오오온즈2222", response);
+          if (response.data.ok) {
+            // return thunkAPI.fulfillWithValue(response.data.ok);
+          }
+        });
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
   }
 );
 
+// eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYW5naGFlIiwiZXhwIjoxNjY2ODUyNzA2LCJpYXQiOjE2NjY4NDkxMDZ9.Dk2nmROxOY4ssyUmnPQgQBi4tNNhpWdbNKegRKbQHVI
+
 // PATCH(PUT) - EDITCONTENT
 export const __editContent = createAsyncThunk(
   "post/__editContent",
   async (payload, thunkAPI) => {
+    console.log("수정용 페이로드", payload);
+    console.log("페이로드 content 추출", JSON.stringify(payload.revise));
+    console.log("페이로드id : 추출", payload.id);
     try {
+      console.log("수정요청할때 헤더값", headers.Access_Token);
       // 내용을 수정하고
-      await axios.patch(`http://localhost:3001/content/${payload.id}`, {
-        id: payload.id,
-        content: payload.target,
-      });
+      const data = await axios.put(
+        `http://54.180.140.58:8080/post/${payload.id}`,
+        JSON.stringify(payload.revise),
+
+        { headers: headers }
+      );
       // 수정한 값을 넣은 새로운 내용을 get으로 가져온다
-      const data = await axios.get("http://localhost:3001/content");
+      // const data = await axios.get(
+      //   `http://54.180.140.58:8080/post/movie/${payload.id}`
+      // );
       // 성공하면 가져온 수정 데이터를 보내주고
+      console.log("edit 성공 후 받아온 데이터", data);
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
       // 실패하면 서버에서 에러메시지를 보내준다.

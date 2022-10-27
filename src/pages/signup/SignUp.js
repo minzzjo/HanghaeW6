@@ -144,6 +144,12 @@ const SignUp = () => {
   //     });
   // };
 
+  // 효진 엑세스 토큰
+  // eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoeW9qaW4iLCJleHAiOjE2NjY4NTMyNzgsImlhdCI6MTY2Njg0OTY3OH0._EKVRKY-BbtpdKvEquVLuAddawehKlB2SxpOV2M0E7c
+
+  // 항해 엑세스 토큰
+  // eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYW5naGFlIiwiZXhwIjoxNjY2ODUzMzIxLCJpYXQiOjE2NjY4NDk3MjF9.BmH4-H1UitngkF-sMwDZKpM9sCwbXJ13VYSRx6OVn-k
+
   const nickNameCheck = async () => {
     console.log(nickname);
     await axios
